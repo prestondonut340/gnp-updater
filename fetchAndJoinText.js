@@ -1,5 +1,5 @@
 // URL of the remote text file
-const remoteTextFileURL = 'https://example.com/remote_file.txt';
+const remoteTextFileURL = 'url.txt';
 
 // Function to fetch the content of the remote text file
 async function fetchRemoteTextFile(url) {
