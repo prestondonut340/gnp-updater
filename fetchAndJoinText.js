@@ -1,5 +1,5 @@
 // URL of the remote text file
-const remoteTextFileURL = 'url.txt';
+const remoteTextFileURL = 'https://example.com/remote_file.txt';
 
 // Function to fetch the content of the remote text file
 async function fetchRemoteTextFile(url) {
@@ -18,17 +18,21 @@ async function fetchRemoteTextFile(url) {
 
 // Function to join the fetched text with additional text
 function joinText(remoteText, additionalText) {
-  return remoteText + 'BALLS';
+  return remoteText + additionalText;
 }
 
-// Usage: Fetch the remote text file and join its content with additional text
+// Usage: Fetch the remote text file, join its content with additional text, and display in paragraph and iframe
 (async () => {
   const remoteText = await fetchRemoteTextFile(remoteTextFileURL);
   if (remoteText) {
-    const additionalText = "Additional Text"; // Set your additional text here
-    const joinedText = joinText(remoteText, additionalText);
     const remoteTextParagraph = document.getElementById('remoteTextParagraph');
+    const additionalText = "BALLS"; // Set your additional text here
+    const joinedText = joinText(remoteText, additionalText);
+
     remoteTextParagraph.textContent = joinedText;
+
+    const remoteTextFrame = document.getElementById('remoteTextFrame');
+    remoteTextFrame.srcdoc = joinedText;
   } else {
     console.log('Failed to fetch remote text file.');
   }
