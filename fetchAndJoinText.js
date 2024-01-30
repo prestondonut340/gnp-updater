@@ -25,11 +25,8 @@ function joinText(remoteText, additionalText) {
 (async () => {
   const remoteText = await fetchRemoteTextFile(remoteTextFileURL);
   if (remoteText) {
-    const remoteTextParagraph = document.getElementById('remoteTextParagraph');
     const additionalText = "BALLS"; // Set your additional text here
     const joinedText = joinText(remoteText, additionalText);
-
-    remoteTextParagraph.textContent = joinedText;
 
     const remoteTextFrame = document.getElementById('remoteTextFrame');
     remoteTextFrame.src = joinedText;
