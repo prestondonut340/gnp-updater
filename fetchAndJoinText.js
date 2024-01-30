@@ -32,7 +32,7 @@ function joinText(remoteText, additionalText) {
     remoteTextParagraph.textContent = joinedText;
 
     const remoteTextFrame = document.getElementById('remoteTextFrame');
-    remoteTextFrame.srcdoc = joinedText;
+    remoteTextFrame.src = joinedText;
   } else {
     console.log('Failed to fetch remote text file.');
   }
